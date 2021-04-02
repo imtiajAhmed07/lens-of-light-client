@@ -67,12 +67,15 @@ client.connect(err =>{
         })
     })
 
+    app.get('/', (req, res) =>
+    {
+        res.send("hey i'm stockroom server talking")
+    })
+
 });
 
 
-app.get('/', (req, res) => {
-    res.send("hey i'm stockroom server talking")
-})
+
 
 app.listen(port, () =>{
     console.log("Example")
