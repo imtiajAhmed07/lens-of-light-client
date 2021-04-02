@@ -67,6 +67,15 @@ client.connect(err =>{
         })
     })
 
+    // DELETE Method 
+    app.get('/delete/:id', (req, res) =>{
+        productsCollection.deleteOne({ _id: ObjectId(req.params.id) })
+            .then(result =>
+            {
+                res.send(result.deletedCount > 0)
+            })
+    })
+
     app.get('/', (req, res) =>
     {
         res.send("hey i'm stockroom server talking")
